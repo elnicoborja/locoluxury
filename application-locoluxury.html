@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<!--
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  NICOLÁS BORJA — JOB APPLICATION TEMPLATE                                   ║
+║  Version 1.0 · April 2026                                                   ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║  HOW TO USE WITH CLAUDE:                                                     ║
+║                                                                              ║
+║  1. Copy this prompt and paste it to Claude along with the job description:  ║
+║                                                                              ║
+║  ─────────────────────────────────────────────────────────────────────────  ║
+║  Fill this application template for the following role.                      ║
+║                                                                              ║
+║  Company: [COMPANY NAME]                                                     ║
+║  Role: [ROLE TITLE]                                                          ║
+║  Date: [MONTH YEAR]                                                          ║
+║                                                                              ║
+║  Job Description:                                                            ║
+║  [PASTE FULL JD HERE]                                                        ║
+║                                                                              ║
+║  Replace all [[PLACEHOLDERS]] in the HTML template I'll attach.             ║
+║  Rules:                                                                      ║
+║  · "What I Bring" column in the Venn section → NEVER change it              ║
+║  · "[[COMPANY]] Needs" → 5 bullets pulled directly from the JD              ║
+║  · "Intersection" → 3–4 specific ways my background maps to those needs     ║
+║  · 3 strategies → address what the JD is actually asking for                ║
+║  · "Why [[COMPANY]]" cards → 2 specific reasons for THIS company            ║
+║  · Preserve my tone: direct, strategic, no fluff, bilingual voice ok        ║
+║  · Return the complete filled HTML file.                                     ║
+║  ─────────────────────────────────────────────────────────────────────────  ║
+║                                                                              ║
+║  2. Claude returns a filled .html — open in browser, done.                  ║
+║                                                                              ║
+║  PLACEHOLDERS IN THIS FILE:                                                  ║
+║  LocoLuxury         Company name (short form)                          ║
+║  Head of Growth           Job title as it appears in the JD                  ║
+║  April 2026                 Month + Year of application                        ║
+║  [[HERO_HEADLINE_1]]      First line of h1 (what you do)                    ║
+║  [[HERO_HEADLINE_2]]      Second line (what company does)                    ║
+║  [[HERO_HEADLINE_ACCENT]] Third line / accent line (the "together" moment)  ║
+║  I ran paid acquisition for Hyatt Inclusive Collection across 9+ LATAM markets — luxury hospitality, high-consideration travel, sustained ROAS on Meta, Google, and TikTok. Before that, +123% lead gen at Thomson Reuters and 16M organic followers at PlayGround. I've built the funnels, written the automations, and shipped the code myself. LocoLuxury needs someone who writes the playbook. That's what I do.             3–4 sentence hero paragraph (custom per role)     ║
+║  [[COMPANY_NEED_1–5]]     5 key requirements from the JD                    ║
+║  [[INTERSECTION_1–4]]     Where Nico's strengths meet company's needs       ║
+║  90-Day Plan           "90-Day Plan" or "First 90 Days" etc.             ║
+║  [[PLAN_H2]]              Headline for the plan section                      ║
+║  [[PLAN_INTRO]]           1–2 sentence setup for the three strategies       ║
+║  [[STRATEGY_1/2/3_*]]     Strategy cards (num, title, body, result)         ║
+║  [[WHY_H2]]               "Why [Company]" section headline                  ║
+║  [[WHY_CARD_1/2_*]]       Two fit cards explaining the specific match       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nicolás Borja × LocoLuxury — Head of Growth</title>
+  <meta name="description" content="Nicolás Borja — Application for Head of Growth at LocoLuxury. 14 years, 5 LATAM markets, 16M organic followers. Systems-driven growth." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    /* ── Brand palette — personal teal on dark ── */
+    :root {
+      --bg:            #0A0C0C;
+      --surface:       #121818;
+      --surface2:      #181F1F;
+      --border:        #1E2A2A;
+      --border-hover:  #2E4444;
+      --text:          #EEF0EE;
+      --muted:         #607070;
+      --dim:           #8A9E9E;
+      --accent:        #3DBFB8;   /* brand teal — lighter for dark bg */
+      --accent-dim:    rgba(61,191,184,0.09);
+      --accent-border: rgba(61,191,184,0.22);
+      --nav-bg:        rgba(10,12,12,0.92);
+    }
+
+    /* ── Light mode ── */
+    body.light {
+      --bg:            #F0EAD8;
+      --surface:       #FFFFFF;
+      --surface2:      #EDE8DA;
+      --border:        #D8D2C4;
+      --border-hover:  #B0A898;
+      --text:          #1A1A18;
+      --muted:         #7A7468;
+      --dim:           #5A5550;
+      --accent:        #1A6B66;
+      --accent-dim:    rgba(26,107,102,0.08);
+      --accent-border: rgba(26,107,102,0.20);
+      --nav-bg:        rgba(240,234,216,0.94);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.25s, color 0.25s;
+    }
+    p, h1, h2, h3, li, span, div { word-wrap: break-word; overflow-wrap: break-word; hyphens: auto; }
+
+    /* ── Typography ── */
+    .label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 18px; display: block;
+    }
+    h1 { font-size: clamp(32px, 5vw, 68px); font-weight: 900; line-height: 1.06; letter-spacing: -0.03em; }
+    h2 { font-size: clamp(22px, 3vw, 42px); font-weight: 800; line-height: 1.1; letter-spacing: -0.025em; }
+    h3 { font-size: 16px; font-weight: 700; line-height: 1.35; margin-bottom: 10px; }
+    p  { color: var(--dim); line-height: 1.75; }
+    a  { color: inherit; }
+    em { font-style: italic; }
+
+    /* ── Layout ── */
+    .section-wrap { max-width: 1080px; margin: 0 auto; padding: 96px 40px; }
+    .divider { border: none; border-top: 1px solid var(--border); max-width: 1080px; margin: 0 auto; transition: border-color 0.25s; }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px; background: var(--nav-bg);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .nav-logo { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: var(--text); }
+    .nav-logo em { color: var(--accent); font-style: normal; }
+    .nav-links { list-style: none; display: flex; gap: 24px; align-items: center; }
+    .nav-links a { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    #theme-toggle {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 100px;
+      padding: 5px 12px; cursor: pointer; font-size: 13px; color: var(--muted); font-weight: 600;
+      transition: border-color 0.2s, color 0.2s, background 0.25s;
+      display: flex; align-items: center; gap: 5px; white-space: nowrap;
+    }
+    #theme-toggle:hover { border-color: var(--muted); color: var(--text); }
+
+    /* ── Hero ── */
+    #hero { min-height: 100vh; display: flex; align-items: center; padding: 130px 40px 80px; position: relative; overflow: hidden; }
+    #hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 55% 45% at 70% 38%, rgba(61,191,184,0.05) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 55% at 20% 78%, rgba(61,191,184,0.025) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    body.light #hero::before {
+      background:
+        radial-gradient(ellipse 55% 45% at 70% 38%, rgba(26,107,102,0.05) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 55% at 20% 78%, rgba(26,107,102,0.03) 0%, transparent 60%);
+    }
+    .hero-inner { max-width: 1080px; margin: 0 auto; width: 100%; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px;
+      background: var(--accent-dim); border: 1px solid var(--accent-border);
+      border-radius: 100px; font-size: 11px; font-weight: 700; color: var(--accent);
+      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 36px;
+    }
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); animation: blink 2s ease-in-out infinite; flex-shrink: 0;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+    .hero-sub { font-size: clamp(15px, 1.7vw, 18px); color: var(--dim); margin-top: 26px; max-width: 660px; line-height: 1.72; }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 42px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 7px; font-size: 14px; font-weight: 700; text-decoration: none; transition: opacity 0.2s, border-color 0.2s, color 0.2s; cursor: pointer; white-space: nowrap; }
+    .btn-accent { background: var(--accent); color: #000 !important; }
+    .btn-accent:hover { opacity: 0.83; }
+    .btn-outline { border: 1px solid var(--border); color: var(--dim); }
+    .btn-outline:hover { border-color: var(--border-hover); color: var(--text); }
+    .hero-scroll { margin-top: 68px; font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .hero-scroll::before { content: ''; display: block; width: 32px; height: 1px; background: var(--border); }
+
+    /* ── KPI Strip ── */
+    .kpi-strip { display: grid; grid-template-columns: repeat(6, 1fr); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 68px; background: var(--border); gap: 1px; transition: border-color 0.25s; }
+    .kpi-cell { background: var(--surface); padding: 28px 20px; transition: background 0.25s; }
+    .kpi-num { font-size: clamp(22px, 2.5vw, 36px); font-weight: 900; color: var(--accent); letter-spacing: -0.03em; line-height: 1; margin-bottom: 6px; min-height: 1em; }
+    .kpi-desc { font-size: 12px; color: var(--muted); line-height: 1.45; }
+
+    /* ── Venn Intersection ── */
+    .venn-grid {
+      display: grid; grid-template-columns: 1fr 1.15fr 1fr;
+      gap: 0; margin-top: 52px;
+      border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+    }
+    .venn-col { padding: 36px 28px; }
+    .venn-left, .venn-right { background: var(--surface); }
+    .venn-center {
+      background: var(--accent-dim);
+      border-left: 1px solid var(--accent-border);
+      border-right: 1px solid var(--accent-border);
+    }
+    .venn-col-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 22px;
+    }
+    .venn-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .venn-list li { font-size: 13px; color: var(--muted); line-height: 1.55; padding-left: 18px; position: relative; }
+    .venn-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); opacity: 0.55; font-size: 11px; top: 2px; }
+    .venn-center .venn-list li { color: var(--text); font-weight: 500; font-size: 13.5px; }
+    .venn-center .venn-list li::before { opacity: 1; }
+    .venn-right .venn-col-label { color: var(--muted); }
+
+    /* ── Strategy Cards ── */
+    .strategy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 52px; }
+    .strategy-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 32px 28px; transition: border-color 0.25s, background 0.25s;
+      display: flex; flex-direction: column; min-width: 0;
+    }
+    .strategy-card:hover { border-color: var(--accent-border); }
+    .strategy-num { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; flex-shrink: 0; }
+    .strategy-card h3 { font-size: 16px; margin-bottom: 14px; flex-shrink: 0; }
+    .strategy-card p { font-size: 13.5px; flex: 1; line-height: 1.72; }
+    .strategy-result { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.02em; flex-shrink: 0; }
+
+    /* ── SOUND Methodology ── */
+    .method-header { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: end; margin-bottom: 48px; }
+    .method-header p { font-size: 15px; margin-top: 16px; }
+    .sound-radial-wrap { display: flex; gap: 48px; align-items: center; margin-top: 48px; }
+    .sound-radial-svg { width: 340px; height: 340px; flex-shrink: 0; overflow: visible; }
+    .s-ring { fill: none; stroke: var(--border); stroke-width: 1; transition: stroke 0.3s; }
+    .s-pulse { fill: none; stroke: var(--accent); stroke-width: 1.5; transform-origin: 170px 170px; animation: sound-pulse 3.6s ease-out infinite; }
+    .s-pulse:nth-child(2) { animation-delay: 1.2s; }
+    .s-pulse:nth-child(3) { animation-delay: 2.4s; }
+    @keyframes sound-pulse { 0% { transform: scale(0.18); opacity: 0.5; } 100% { transform: scale(1.05); opacity: 0; } }
+    .s-center-bg { fill: var(--accent-dim); stroke: var(--accent-border); stroke-width: 1.5; }
+    .s-center-text { fill: var(--accent); font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 800; letter-spacing: 0.22em; text-anchor: middle; dominant-baseline: central; }
+    .s-spoke { stroke: var(--border); stroke-width: 1; stroke-dasharray: 3 5; transition: stroke 0.25s, opacity 0.25s; }
+    .s-node { cursor: pointer; }
+    .s-node-bg { fill: var(--surface); stroke: var(--border); stroke-width: 1.5; transition: fill 0.2s, stroke 0.2s; }
+    .s-node:hover .s-node-bg, .s-node.active .s-node-bg { fill: var(--accent-dim); stroke: var(--accent); }
+    .s-node:hover .s-spoke, .s-node.active .s-spoke { stroke: var(--accent); stroke-dasharray: none; opacity: 0.35; }
+    .s-node-letter { fill: var(--muted); font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 900; text-anchor: middle; dominant-baseline: central; transition: fill 0.2s; pointer-events: none; }
+    .s-node:hover .s-node-letter, .s-node.active .s-node-letter { fill: var(--accent); }
+    .sound-desc-panel { flex: 1; min-height: 180px; display: flex; flex-direction: column; justify-content: center; }
+    .sdp-letter { font-size: 72px; font-weight: 900; color: var(--accent); line-height: 1; letter-spacing: -0.05em; transition: color 0.2s; }
+    .sdp-word { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); margin: 4px 0 14px; }
+    .sdp-desc { font-size: 14px; color: var(--muted); line-height: 1.75; max-width: 360px; }
+    .sdp-hint { margin-top: 18px; font-size: 11px; color: var(--border); letter-spacing: 0.08em; text-transform: uppercase; }
+    @media (max-width: 780px) { .sound-radial-wrap { flex-direction: column; gap: 24px; } .sound-radial-svg { width: 280px; height: 280px; } }
+    .method-quote { margin-top: 40px; border: 1px solid var(--accent-border); background: var(--accent-dim); border-radius: 12px; padding: 30px 34px; transition: background 0.25s, border-color 0.25s; }
+    .method-quote p { font-size: 16px; color: var(--text); font-style: italic; line-height: 1.65; }
+    .method-quote cite { display: block; margin-top: 14px; font-size: 11px; font-weight: 700; color: var(--accent); font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* ── Projects ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 48px; }
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; min-width: 0; text-decoration: none; transition: border-color 0.25s, background 0.25s; }
+    .project-card:hover { border-color: var(--accent-border); }
+    .project-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+    .project-card h3 { font-size: 15px; margin-bottom: 0; color: var(--text); }
+    .project-card p { font-size: 13px; flex: 1; }
+    .project-link { font-size: 12px; font-weight: 600; color: var(--accent); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; margin-top: auto; }
+
+    /* ── Results ── */
+    .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 52px; }
+    .result-block { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 26px 24px; min-width: 0; transition: background 0.25s, border-color 0.25s; }
+    .client-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 8px; }
+    .result-block h3 { font-size: 15px; margin-bottom: 16px; color: var(--text); }
+    .result-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13px; transition: border-color 0.25s; }
+    .result-row:last-child { border-bottom: none; }
+    .result-row .metric { color: var(--muted); flex: 1; min-width: 0; }
+    .result-row .value { color: var(--text); font-weight: 600; text-align: right; flex-shrink: 0; max-width: 55%; }
+
+    /* ── Timeline ── */
+    .timeline { margin-top: 52px; }
+    .tl-item { display: grid; grid-template-columns: 128px 1fr; gap: 36px; padding: 30px 0; border-bottom: 1px solid var(--border); transition: border-color 0.25s; }
+    .tl-item:first-child { padding-top: 0; }
+    .tl-item:last-child { border-bottom: none; }
+    .tl-period { font-size: 12px; color: var(--muted); font-weight: 500; padding-top: 3px; line-height: 1.5; flex-shrink: 0; }
+    .tl-role { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+    .tl-company { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 9px; }
+    .tl-desc { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+    /* ── Fit Cards ── */
+    .fit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 52px; }
+    .fit-card { border: 1px solid var(--border); border-radius: 12px; padding: 26px 22px; min-width: 0; transition: border-color 0.2s, background 0.25s; }
+    .fit-card:hover { border-color: var(--border-hover); }
+    .fit-icon { font-size: 22px; margin-bottom: 12px; }
+    .fit-card h3 { font-size: 14px; margin-bottom: 9px; }
+    .fit-card p { font-size: 13px; }
+
+    /* ── CTA ── */
+    #cta { text-align: center; }
+    #cta h2 { max-width: 560px; margin: 0 auto 18px; }
+    #cta > .section-wrap > p { max-width: 470px; margin: 0 auto 38px; font-size: 15px; }
+    .cta-meta { margin-top: 16px; font-size: 13px; color: var(--muted); }
+    .link-pills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 34px; }
+    .pill { display: inline-flex; align-items: center; gap: 5px; padding: 8px 15px; background: var(--surface); border: 1px solid var(--border); border-radius: 100px; font-size: 12px; font-weight: 600; color: var(--muted); text-decoration: none; transition: color 0.2s, border-color 0.2s, background 0.25s; white-space: nowrap; }
+    .pill:hover { color: var(--text); border-color: var(--border-hover); }
+    .pill.featured { border-color: var(--accent-border); color: var(--accent); background: var(--accent-dim); }
+    .pill.featured:hover { opacity: 0.8; }
+
+    /* ── Footer ── */
+    footer { border-top: 1px solid var(--border); padding: 26px 40px; text-align: center; font-size: 12px; color: var(--muted); transition: border-color 0.25s; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--dim); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .method-header { grid-template-columns: 1fr; gap: 16px; }
+      .kpi-strip { grid-template-columns: repeat(3, 1fr); }
+      .strategy-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
+      .fit-grid { grid-template-columns: 1fr; }
+      .venn-grid { grid-template-columns: 1fr; }
+      .venn-center { border-left: none; border-right: none; border-top: 1px solid var(--accent-border); border-bottom: 1px solid var(--accent-border); }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 14px 18px; }
+      .nav-links li:not(:last-child) { display: none; }
+      .section-wrap { padding: 64px 18px; }
+      #hero { padding: 106px 18px 56px; }
+      .kpi-strip { grid-template-columns: repeat(2, 1fr); }
+      .tl-item { grid-template-columns: 1fr; gap: 4px; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ──────── NAV ──────── -->
+<nav>
+  <a href="#hero" class="nav-logo">Nicolás Borja <em>× LocoLuxury</em></a>
+  <ul class="nav-links">
+    <li><a href="#fit-analysis">Fit</a></li>
+    <li><a href="#offer">90-Day Plan</a></li>
+    <li><a href="#method">System</a></li>
+    <li><a href="#built">Built</a></li>
+    <li><a href="#proof">Proof</a></li>
+    <li><a href="#track">Track Record</a></li>
+    <li><a href="#cta">Let's Talk</a></li>
+    <li>
+      <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+        <span id="theme-icon">☀️</span> <span id="theme-label">Light</span>
+      </button>
+    </li>
+  </ul>
+</nav>
+
+<!-- ──────── HERO ──────── -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Application · LocoLuxury · April 2026</div>
+    <h1>I build growth engines.<br>You build unforgettable stays.<br><span style="color: var(--accent)">Let's fill every villa.</span></h1>
+    <p class="hero-sub">I ran paid acquisition for Hyatt Inclusive Collection across 9+ LATAM markets — luxury hospitality, high-consideration travel, sustained ROAS on Meta, Google, and TikTok. Before that, +123% lead gen at Thomson Reuters and 16M organic followers at PlayGround. I've built the funnels, written the automations, and shipped the code myself. LocoLuxury needs someone who writes the playbook. That's what I do.</p>
+    <div class="hero-cta">
+      <a href="#offer" class="btn btn-accent">See the 90-Day Plan ↓</a>
+      <a href="mailto:contact@nicoborja.com" class="btn btn-outline">contact@nicoborja.com</a>
+    </div>
+    <div class="hero-scroll">The application</div>
+    <div class="kpi-strip">
+      <div class="kpi-cell">
+        <div class="kpi-num" data-target="9" data-suffix="+">0</div>
+        <div class="kpi-desc">LATAM markets<br>Hyatt Inclusive Collection</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-num" data-target="14">0</div>
+        <div class="kpi-desc">Years in digital<br>marketing &amp; growth</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-num" data-target="123" data-prefix="+">0</div>
+        <div class="kpi-desc">% Lead gen lift<br>Thomson Reuters Y1</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-num" data-target="92" data-prefix="+">0</div>
+        <div class="kpi-desc">% Campaign efficiency<br>improvement (TR)</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-num" data-target="16" data-suffix="M">0</div>
+        <div class="kpi-desc">Organic followers<br>PlayGround Facebook</div>
+      </div>
+      <div class="kpi-cell">
+        <div class="kpi-num" data-target="900" data-suffix="K+">0</div>
+        <div class="kpi-desc">Views delivered<br>Music clients (active)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ──────── VENN FIT ANALYSIS ──────── -->
+<section id="fit-analysis">
+  <div class="section-wrap">
+    <span class="label">Fit Analysis</span>
+    <h2>Where your needs meet<br>what I've built.</h2>
+    <p style="margin-top: 14px; max-width: 580px; font-size: 15px;">
+      Not a cover letter — a structured map of overlap between what LocoLuxury is asking for and what I've already executed.
+    </p>
+
+    <div class="venn-grid">
+      <!-- LEFT: ALWAYS STATIC — do not change when filling template -->
+      <div class="venn-col venn-left">
+        <div class="venn-col-label">What I Bring</div>
+        <ul class="venn-list">
+          <li>14 years of digital marketing across LATAM</li>
+          <li>SOUND: bi-weekly systems that compound without heroics</li>
+          <li>Fortune 500 demand gen — +123% lead gen at TR</li>
+          <li>Organic community growth to 16M (zero paid budget)</li>
+          <li>Builder: ships code, not just decks</li>
+          <li>Trilingual: EN / ES / PT — native in all three</li>
+          <li>Alliance model: value exchange over cash deals</li>
+        </ul>
+      </div>
+
+      <!-- CENTER: CUSTOMIZED PER JD — the intersection -->
+      <div class="venn-col venn-center">
+        <div class="venn-col-label">The Intersection</div>
+        <ul class="venn-list">
+          <li>Ran paid acquisition for Hyatt Inclusive Collection across 9+ LATAM markets — luxury hospitality, multi-geo, sustained ROAS on Meta, Google, and TikTok. Not an agency handoff — hands on the campaigns</li>
+          <li>Understands the luxury travel funnel: long decision window, group dynamics, emotional triggers, high AOV. Built the targeting, creative rotation, and attribution for it</li>
+          <li>Designed and automated CRM workflows, lead qualification pipelines, and nurture sequences — not managed them, built them myself</li>
+          <li>Ships code, builds dashboards, writes automations — the self-sufficient operator a founding team actually needs</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: CUSTOMIZED PER JD — pulled from job description -->
+      <div class="venn-col venn-right">
+        <div class="venn-col-label">LocoLuxury Needs</div>
+        <ul class="venn-list">
+          <li>Build a guest acquisition engine across organic, paid, and partnerships</li>
+          <li>Design the full funnel: content → lead → qualification → sales → booking</li>
+          <li>Systems that generate qualified, high-intent leads consistently</li>
+          <li>Launch, test, and scale new acquisition channels and campaigns</li>
+          <li>Entrepreneurial operator — no roadmap, no hand-holding required</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ──────── 90-DAY PLAN ──────── -->
+<section id="offer">
+  <div class="section-wrap">
+    <span class="label">90-Day Plan</span>
+    <h2>Three moves to fill every villa.</h2>
+    <p style="margin-top: 14px; max-width: 580px; font-size: 15px;">No audit phase. No "getting up to speed." I arrive with a system. Here's how it deploys at LocoLuxury in the first 90 days.</p>
+
+    <div class="strategy-grid">
+      <div class="strategy-card">
+        <div class="strategy-num">Days 01–30</div>
+        <h3>Map the funnel, fix the leaks</h3>
+        <p>Full audit of current acquisition channels, booking flow, and conversion data. Identify where high-intent leads drop off. Set up tracking, CRM workflows, and lead scoring. Build the measurement layer so every dollar and every lead is visible.</p>
+        <div class="strategy-result">→ Baseline metrics established · CRM live · first leaks patched</div>
+      </div>
+      <div class="strategy-card">
+        <div class="strategy-num">Days 31–60</div>
+        <h3>Build the inbound engine</h3>
+        <p>Launch paid acquisition on Meta and Google targeting destination weddings, corporate retreats, and luxury group travel. Align with content team to turn organic attention into qualified inbound. Set up automated nurture sequences from first touch to booking call.</p>
+        <div class="strategy-result">→ Paid channels live · inbound pipeline generating qualified leads</div>
+      </div>
+      <div class="strategy-card">
+        <div class="strategy-num">Days 61–90</div>
+        <h3>Scale what converts, kill what doesn't</h3>
+        <p>Double down on highest-converting channels. Launch partnership acquisition — wedding planners, travel concierges, corporate event firms. Build referral and repeat-guest systems. Document everything into a playbook that runs without me in the room.</p>
+        <div class="strategy-result">→ Scalable acquisition system · documented playbook · revenue-tied KPIs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ──────── THE SYSTEM (STATIC) ──────── -->
+<section id="method">
+  <div class="section-wrap">
+    <span class="label">The Methodology</span>
+    <div class="method-header">
+      <div>
+        <h2>I don't pitch strategies.<br>I install systems.</h2>
+        <p>The methodology behind everything I've built is the same: bi-weekly cycles, test-optimize-distribute, relentless focus on what actually compounds. One framework across every vertical. The client changes — the operating cadence doesn't.</p>
+      </div>
+      <div>
+        <p style="font-size: 15px;">Every engagement runs on SOUND. It's not a brand exercise — it's the operating system I've stress-tested across 5 LATAM markets, Fortune 500 demand gen, organic community growth, and live music campaigns. Same principles, different scales.</p>
+      </div>
+    </div>
+    <div class="sound-radial-wrap">
+      <svg viewBox="0 0 340 340" class="sound-radial-svg" id="sound-svg" aria-label="SOUND methodology diagram">
+        <circle cx="170" cy="170" r="56"  class="s-ring"/>
+        <circle cx="170" cy="170" r="100" class="s-ring"/>
+        <circle cx="170" cy="170" r="145" class="s-ring"/>
+        <circle cx="170" cy="170" r="145" class="s-pulse"/>
+        <circle cx="170" cy="170" r="145" class="s-pulse"/>
+        <circle cx="170" cy="170" r="145" class="s-pulse"/>
+        <circle cx="170" cy="170" r="32" class="s-center-bg"/>
+        <text x="170" y="170" class="s-center-text">SOUND</text>
+        <g class="s-node" id="node-S" data-letter="S" data-word="System" data-desc="Repeatable bi-weekly cycles. Consistency over inspiration — not the other way around. The operating cadence that runs regardless of mood. Mise en place before execution.">
+          <line x1="170" y1="134" x2="170" y2="46" class="s-spoke"/>
+          <circle cx="170" cy="25" r="22" class="s-node-bg"/>
+          <text x="170" y="25" class="s-node-letter">S</text>
+        </g>
+        <g class="s-node" id="node-O" data-letter="O" data-word="Optimized" data-desc="Every cycle improves. Test, learn, adjust. Not set-and-forget. Data decides, not gut feel. Vanity metrics don't survive contact with this system.">
+          <line x1="204" y1="159" x2="291" y2="130" class="s-spoke"/>
+          <circle cx="308" cy="125" r="22" class="s-node-bg"/>
+          <text x="308" y="125" class="s-node-letter">O</text>
+        </g>
+        <g class="s-node" id="node-U" data-letter="U" data-word="Universal" data-desc="One framework, multiple verticals. The principles don't change when the client does. What works for a record label works for a SaaS. Technique over recipe.">
+          <line x1="191" y1="199" x2="238" y2="269" class="s-spoke"/>
+          <circle cx="255" cy="287" r="22" class="s-node-bg"/>
+          <text x="255" y="287" class="s-node-letter">U</text>
+        </g>
+        <g class="s-node" id="node-N" data-letter="N" data-word="Net" data-desc="Net result. La neta. What remains after the noise is removed. No impressions theater, no vanity plays. What compounds — stays. What doesn't — goes immediately.">
+          <line x1="149" y1="199" x2="102" y2="269" class="s-spoke"/>
+          <circle cx="85" cy="287" r="22" class="s-node-bg"/>
+          <text x="85" y="287" class="s-node-letter">N</text>
+        </g>
+        <g class="s-node" id="node-D" data-letter="D" data-word="Distributed" data-desc="CDMX · Bogotá · Medellín · São Paulo · Dallas. Multi-market execution is the default, not the exception. 24/5 mindset. The table is always set for more than one market.">
+          <line x1="136" y1="159" x2="49" y2="130" class="s-spoke"/>
+          <circle cx="32" cy="125" r="22" class="s-node-bg"/>
+          <text x="32" y="125" class="s-node-letter">D</text>
+        </g>
+      </svg>
+      <div class="sound-desc-panel">
+        <div class="sdp-letter" id="sdp-letter">·</div>
+        <div class="sdp-word"   id="sdp-word">The methodology</div>
+        <div class="sdp-desc"   id="sdp-desc">Five principles. One system. Each letter connects back to the center — the methodology only works when all five are active at the same time.</div>
+        <div class="sdp-hint"   id="sdp-hint">← hover a letter to explore</div>
+      </div>
+    </div>
+    <div class="method-quote">
+      <p>"The client changes — the operating cadence doesn't. SOUND is the system I install wherever I go. It's what makes growth repeatable instead of lucky."</p>
+      <cite>— Nicolás Borja</cite>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ──────── BUILT PROJECTS (STATIC) ──────── -->
+<section id="built">
+  <div class="section-wrap">
+    <span class="label">Built, Not Just Strategized</span>
+    <h2>Things I've shipped.</h2>
+    <p style="margin-top: 14px; max-width: 560px; font-size: 15px;">A growth person who actually builds is a compounding advantage. Here's the proof.</p>
+    <div class="projects-grid">
+      <a href="https://beat-world.replit.app/" target="_blank" rel="noopener" class="project-card">
+        <div class="project-tag">Game App · Replit · Ongoing</div>
+        <h3>Beat World</h3>
+        <p>A music-driven game built from scratch in a single weekend on Replit. Shows I ship quickly, test in public, and keep building past v1.</p>
+        <span class="project-link">beat-world.replit.app ↗</span>
+      </a>
+      <a href="https://elnicoborja.github.io/Unwrapping-Spotify-Top-10-2021-2023-nicoborja-dot-com-2026/" target="_blank" rel="noopener" class="project-card">
+        <div class="project-tag">Data Viz · GitHub Pages · Thesis</div>
+        <h3>Spotify Top 10 Interactive Visualization</h3>
+        <p>Graduate thesis turned into a live interactive experience. D3.js, Python, GitHub Pages. Data analysis as a story worth reading.</p>
+        <span class="project-link">View live ↗</span>
+      </a>
+      <a href="https://elnicoborja.github.io/creador-nombres-sonideros/" target="_blank" rel="noopener" class="project-card">
+        <div class="project-tag">Web Tool · GitHub Pages · Live</div>
+        <h3>Sonidero Name Generator</h3>
+        <p>A web tool at the intersection of Mexican music culture and code. Built fast, deployed to GitHub Pages. The same instinct that runs SOUND.</p>
+        <span class="project-link">elnicoborja.github.io/creador-nombres-sonideros ↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ──────── PROOF (STATIC) ──────── -->
+<section id="proof">
+  <div class="section-wrap">
+    <span class="label">Proof of Work</span>
+    <h2>Numbers that hold up<br>under scrutiny.</h2>
+    <p style="margin-top: 14px; max-width: 540px; font-size: 15px;">Across enterprise demand gen, organic community building, performance consulting, and active music campaigns — same system, different scales.</p>
+    <div class="results-grid">
+      <div class="result-block">
+        <div class="client-tag">Luxury Hospitality · Paid Acquisition</div>
+        <h3>Hyatt Inclusive Collection</h3>
+        <div class="result-row"><span class="metric">LATAM markets managed</span><span class="value">9+</span></div>
+        <div class="result-row"><span class="metric">Platforms</span><span class="value">Meta · Google · TikTok</span></div>
+        <div class="result-row"><span class="metric">ROAS performance</span><span class="value">Sustained · Multi-market</span></div>
+        <div class="result-row"><span class="metric">Scope</span><span class="value">Budget allocation, targeting, creative rotation, attribution</span></div>
+        <div class="result-row"><span class="metric">Product type</span><span class="value">All-inclusive resorts · High-consideration travel</span></div>
+      </div>
+      <div class="result-block">
+        <div class="client-tag">Enterprise · Fortune 500</div>
+        <h3>Thomson Reuters LATAM</h3>
+        <div class="result-row"><span class="metric">Audience engagement (Y1)</span><span class="value">+48%</span></div>
+        <div class="result-row"><span class="metric">Lead generation lift (Y1)</span><span class="value">+123%</span></div>
+        <div class="result-row"><span class="metric">Campaign efficiency improvement</span><span class="value">+92%</span></div>
+        <div class="result-row"><span class="metric">AI workflow impact</span><span class="value">Standardized output · ↓ turnaround</span></div>
+        <div class="result-row"><span class="metric">Tenure</span><span class="value">3 years · Mexico City</span></div>
+      </div>
+      <div class="result-block">
+        <div class="client-tag">Media · Organic Growth</div>
+        <h3>PlayGround Media LATAM</h3>
+        <div class="result-row"><span class="metric">Facebook community</span><span class="value">16M followers</span></div>
+        <div class="result-row"><span class="metric">Markets operated</span><span class="value">MX · CO · BR · AR · CL</span></div>
+        <div class="result-row"><span class="metric">Career progression</span><span class="value">3 roles in 2.5 years</span></div>
+        <div class="result-row"><span class="metric">Brands managed</span><span class="value">Adidas · Diageo · Samsung · Heineken</span></div>
+      </div>
+      <div class="result-block">
+        <div class="client-tag">Clients · Music &amp; Creator Economy</div>
+        <h3>SOUND Agency — Active Campaigns</h3>
+        <div class="result-row"><span class="metric">CPV on YouTube campaigns</span><span class="value">$0.003</span></div>
+        <div class="result-row"><span class="metric">Views delivered (Apr 2026)</span><span class="value">900,000+</span></div>
+        <div class="result-row"><span class="metric">Active campaign budget</span><span class="value">$9,000+ USD</span></div>
+        <div class="result-row"><span class="metric">Personal streams (El Nico Borja)</span><span class="value">183,000+</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ──────── TRACK RECORD (STATIC) ──────── -->
+<section id="track">
+  <div class="section-wrap">
+    <span class="label">Career Arc</span>
+    <h2>14 years. One direction.</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-period">Apr 2023 –<br>Apr 2026</div>
+        <div>
+          <div class="tl-role">Senior Marketer — BDR Marketing &amp; Ops</div>
+          <div class="tl-company">Thomson Reuters · Mexico City</div>
+          <div class="tl-desc">Demand gen at Fortune 500 scale across LATAM. +48% engagement, +123% lead gen, +92% efficiency in Y1. Built AI prompt workflows that standardized output and cut turnaround. Left by choice, on excellent terms.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">May 2021 –<br>Present</div>
+        <div>
+          <div class="tl-role">Independent Consultant — Paid Media &amp; Growth</div>
+          <div class="tl-company">Hyatt · Music Vertical · CDMX</div>
+          <div class="tl-desc">Paid media for Hyatt across 9+ LATAM markets with sustained ROAS. Music clients: $0.003 CPV, 900K+ views, $9K+ active budgets.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Aug 2018 –<br>Feb 2021</div>
+        <div>
+          <div class="tl-role">Content Manager → LATAM → Global Audience Manager</div>
+          <div class="tl-company">PlayGround Media · CO → MX → Global</div>
+          <div class="tl-desc">3 roles in 2.5 years. 16M organic followers. YouTube Brazil from zero. 20+ brand partnerships. Pioneered remote production pre-COVID.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">May 2015 –<br>Apr 2016</div>
+        <div>
+          <div class="tl-role">Digital Director</div>
+          <div class="tl-company">Vice Media Colombia · Bogotá</div>
+          <div class="tl-desc">Budweiser Colombia launch. Six Vice properties managed. Editorial × commercial at a global media brand.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Oct 2012 –<br>Feb 2015</div>
+        <div>
+          <div class="tl-role">Account Manager</div>
+          <div class="tl-company">Red Rock Interactive · Bogotá</div>
+          <div class="tl-desc">Performance marketing foundation. CO, PE, MX. Full digital comms automation. Where the craft began.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ──────── WHY [COMPANY] — CUSTOMIZED ──────── -->
+<section id="culture">
+  <div class="section-wrap">
+    <span class="label">Why LocoLuxury</span>
+    <h2>Two reasons this isn't random.</h2>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <div class="fit-icon">🏨</div>
+        <h3>Case Study: Hyatt Inclusive Collection — 9+ LATAM Markets</h3>
+        <p>I managed paid acquisition across Meta, Google, and TikTok for Hyatt's all-inclusive resort portfolio spanning Mexico, the Caribbean, and Central America. Multi-geo campaigns, sustained ROAS, creative rotation tailored per market. I built the targeting frameworks, ran the budget allocation across properties, and optimized for booking-qualified leads — not just clicks. The product was premium, experiential, and high-consideration — exactly the same dynamics LocoLuxury operates in. The difference is scale: LocoLuxury is earlier, leaner, and needs one person who does all of it. That's the version of this work I prefer.</p>
+      </div>
+      <div class="fit-card">
+        <div class="fit-icon">🔧</div>
+        <h3>I build — I don't just strategize</h3>
+        <p>The JD says "actually built it themselves." That's me. I write the automations, set up the CRM, build the dashboards, ship the landing pages. LocoLuxury doesn't have a playbook yet — you need someone who writes it AND runs it. Not a strategist waiting for a team. A builder who becomes the team until there's reason to grow one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<!-- ──────── CTA ──────── -->
+<section id="cta">
+  <div class="section-wrap">
+    <span class="label">Let's Talk</span>
+    <h2>Ready when you are.</h2>
+    <p>Full-time commitment. CDMX-based, open to Tulum relocation. Available immediately. The plan above is ready to execute — it just needs a green light.</p>
+    <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+      <a href="mailto:contact@nicoborja.com" class="btn btn-accent">contact@nicoborja.com</a>
+      <a href="https://nicoborja.com" target="_blank" rel="noopener" class="btn btn-outline">nicoborja.com →</a>
+    </div>
+    <p class="cta-meta">Trilingual (EN / ES / PT) · Colombia × Mexico City</p>
+    <div class="link-pills">
+      <a href="https://nicoborja.com/portfolio" target="_blank" rel="noopener" class="pill">Portfolio</a>
+      <a href="https://github.com/elnicoborja" target="_blank" rel="noopener" class="pill">GitHub</a>
+      <a href="https://linkedin.com/in/nicoborja" target="_blank" rel="noopener" class="pill">LinkedIn</a>
+      <a href="https://elnicoborja.github.io/Unwrapping-Spotify-Top-10-2021-2023-nicoborja-dot-com-2026/" target="_blank" rel="noopener" class="pill featured">Spotify Viz</a>
+      <a href="https://beat-world.replit.app/" target="_blank" rel="noopener" class="pill featured">Beat World ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ──────── FOOTER ──────── -->
+<footer>
+  <p>Nicolás Borja × LocoLuxury Application · April 2026 · CDMX ·
+    <a href="mailto:contact@nicoborja.com">contact@nicoborja.com</a>
+  </p>
+</footer>
+
+<!-- ──────── SCRIPTS ──────── -->
+<script>
+  function toggleTheme() {
+    const isLight = document.body.classList.toggle('light');
+    document.getElementById('theme-icon').textContent  = isLight ? '🌙' : '☀️';
+    document.getElementById('theme-label').textContent = isLight ? 'Dark' : 'Light';
+    try { localStorage.setItem('nb-theme', isLight ? 'light' : 'dark'); } catch(e) {}
+  }
+  (function() {
+    try {
+      if (localStorage.getItem('nb-theme') === 'light') {
+        document.body.classList.add('light');
+        document.getElementById('theme-icon').textContent  = '🌙';
+        document.getElementById('theme-label').textContent = 'Dark';
+      }
+    } catch(e) {}
+  })();
+
+  /* KPI counters */
+  function animateCounters(container) {
+    container.querySelectorAll('[data-target]').forEach(function(el) {
+      var target = parseInt(el.dataset.target, 10);
+      var prefix = el.dataset.prefix || '';
+      var suffix = el.dataset.suffix || '';
+      var steps = 55, current = 0, increment = target / steps;
+      var tick = setInterval(function() {
+        current = Math.min(current + increment, target);
+        el.textContent = prefix + Math.round(current) + suffix;
+        if (current >= target) { el.textContent = prefix + target + suffix; clearInterval(tick); }
+      }, 1400 / steps);
+    });
+  }
+  var kpiStrip = document.querySelector('.kpi-strip'), animated = false;
+  if (kpiStrip && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting && !animated) { animated = true; animateCounters(kpiStrip); } });
+    }, { threshold: 0.35 }).observe(kpiStrip);
+  }
+
+  /* SOUND diagram */
+  (function() {
+    var nodes = document.querySelectorAll('.s-node');
+    var letter = document.getElementById('sdp-letter'), word = document.getElementById('sdp-word'),
+        desc = document.getElementById('sdp-desc'), hint = document.getElementById('sdp-hint');
+    if (!nodes.length || !letter) return;
+    function activate(node) {
+      nodes.forEach(function(n) { n.classList.remove('active'); });
+      node.classList.add('active');
+      letter.textContent = node.dataset.letter;
+      word.textContent   = node.dataset.word;
+      desc.textContent   = node.dataset.desc;
+      if (hint) hint.style.opacity = '0';
+    }
+    nodes.forEach(function(node) {
+      node.addEventListener('mouseenter', function() { activate(node); });
+      node.addEventListener('click', function() { activate(node); });
+    });
+    var seq = ['S','O','U','N','D'], idx = 0;
+    var timer = setInterval(function() {
+      var t = document.getElementById('node-' + seq[idx]);
+      if (t) activate(t);
+      if (++idx >= seq.length) clearInterval(timer);
+    }, 700);
+  })();
+
+  /* Nav highlight */
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.nav-links a');
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) navLinks.forEach(function(link) {
+          link.style.color = link.getAttribute('href') === '#' + entry.target.id ? 'var(--text)' : '';
+        });
+      });
+    }, { rootMargin: '-38% 0px -55% 0px' }).observe(sections[0]);
+    sections.forEach(function(s) {
+      new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) navLinks.forEach(function(link) {
+            link.style.color = link.getAttribute('href') === '#' + entry.target.id ? 'var(--text)' : '';
+          });
+        });
+      }, { rootMargin: '-38% 0px -55% 0px' }).observe(s);
+    });
+  }
+</script>
+</body>
+</html>
